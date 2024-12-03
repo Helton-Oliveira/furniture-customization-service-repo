@@ -1,5 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.tableTest;
 
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.DirectorsFacade;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
 import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
 import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.ITableDirector;
 import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.TableDirector;
@@ -18,8 +20,8 @@ public class CreateTableOrderTest {
     @Test
     @DisplayName("Deve criar uma mesa")
     void createTableOrder() {
-        ITableDirector tableDirector = new TableDirector();
-        ICreateTableOrder tableOrder = new CreateTableOrder(tableDirector);
+        IDirectorsFacade directorsFacade = new DirectorsFacade();
+        ICreateTableOrder tableOrder = new CreateTableOrder(directorsFacade);
         Map<String, String> data = new HashMap<>();
         data.put("creatorsCpf", "12345678901");
         data.put("material", "wood");

@@ -1,8 +1,9 @@
 package com.digisphere.FurnitureCustomizationService.CabinetTest;
 
-import com.digisphere.FurnitureCustomizationService.application.cabinet.cabinetBuilder.CabinetDirector;
 import com.digisphere.FurnitureCustomizationService.application.cabinet.domain.Cabinet;
 import com.digisphere.FurnitureCustomizationService.application.cabinet.useCase.CreateWardrobeOrder;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.DirectorsFacade;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -34,8 +35,8 @@ public class CreateWardrobeOrderTest {
         data.put("montage", "Manual");
         data.put("purpose", "Storage");
 
-        var director = new CabinetDirector();
-        var useCase = new CreateWardrobeOrder(director);
+        IDirectorsFacade directors = new DirectorsFacade();
+        var useCase = new CreateWardrobeOrder(directors);
         Cabinet cabinet = useCase.execute(data);
 
         assertThat(cabinet).isNotNull();
