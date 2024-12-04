@@ -2,6 +2,8 @@ package com.digisphere.FurnitureCustomizationService.tableTest;
 
 import com.digisphere.FurnitureCustomizationService.application.facadePattern.DirectorsFacade;
 import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
+import com.digisphere.FurnitureCustomizationService.application.order.orderFactory.Factory;
+import com.digisphere.FurnitureCustomizationService.application.order.orderFactory.OrderFactory;
 import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
 import com.digisphere.FurnitureCustomizationService.application.table.useCases.CreateTableOrder;
 import com.digisphere.FurnitureCustomizationService.application.table.useCases.interfaces.ICreateTableOrder;
@@ -23,7 +25,8 @@ public class CreateTableOrderTest {
     void createTableOrder() {
         IDirectorsFacade directorsFacade = new DirectorsFacade();
         IUserExistenceChecker userExistenceChecker = new UserExistenceChecker();
-        ICreateTableOrder tableOrder = new CreateTableOrder(directorsFacade, userExistenceChecker);
+        Factory orderFactory = new OrderFactory();
+        ICreateTableOrder tableOrder = new CreateTableOrder(directorsFacade, userExistenceChecker, orderFactory);
         Map<String, String> data = new HashMap<>();
         data.put("creatorsId", UUID.randomUUID().toString());
         data.put("material", "wood");

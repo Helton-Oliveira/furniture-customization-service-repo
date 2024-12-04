@@ -12,7 +12,6 @@ public class UserExistenceChecker implements IUserExistenceChecker {
     public Boolean doesUserExist(UUID id) {
         String url = generateUrl(id);
         String response = ApiRequester.getData(url);
-        System.out.println(response);
         if(response.isBlank()) throw new RuntimeException("ERRO AO REQUISITAR USUARIO");
         return true;
     }

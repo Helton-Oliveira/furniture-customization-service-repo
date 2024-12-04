@@ -3,7 +3,7 @@ package com.digisphere.FurnitureCustomizationService.application.order.orderFact
 import java.util.Map;
 
 public abstract class Factory {
-    public abstract IOrder createOrder();
+    protected abstract IOrder createOrder();
 
     public String processOrder(Map<String, String> data){
         var order = createOrder();
