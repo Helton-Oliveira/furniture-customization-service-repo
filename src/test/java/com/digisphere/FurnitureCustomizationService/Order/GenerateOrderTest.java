@@ -1,7 +1,8 @@
 package com.digisphere.FurnitureCustomizationService.Order;
 
-import com.digisphere.FurnitureCustomizationService.application.order.orderFactory.Factory;
-import com.digisphere.FurnitureCustomizationService.application.order.orderFactory.OrderFactory;
+import com.digisphere.FurnitureCustomizationService.application.order.domain.Order;
+import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.IOrderDirector;
+import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.OrderDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,8 +24,8 @@ public class GenerateOrderTest {
         data.put("price", "199.99");
         data.put("quantity", "3");
 
-        Factory orderFactory = new OrderFactory();
-        String orderResult = orderFactory.processOrder(data);
-        assertThat(orderResult).isEqualTo("PEDIDO GERADO COM SUCESSO");
+        IOrderDirector orderFactory = new OrderDirector();
+        Order orderResult = orderFactory.createOrder(data);
+        assertThat(orderResult).isNotNull();
     }
 }
