@@ -9,6 +9,9 @@ import com.digisphere.FurnitureCustomizationService.application.cabinet.domain.C
 import com.digisphere.FurnitureCustomizationService.application.chair.chairBuilder.ChairDirector;
 import com.digisphere.FurnitureCustomizationService.application.chair.chairBuilder.IChairDirector;
 import com.digisphere.FurnitureCustomizationService.application.chair.domain.Chair;
+import com.digisphere.FurnitureCustomizationService.application.order.domain.Order;
+import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.IOrderDirector;
+import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.OrderDirector;
 import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
 import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.ITableDirector;
 import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.TableDirector;
@@ -20,6 +23,7 @@ public class DirectorsFacade implements IDirectorsFacade {
     private final IBookCaseDirector bookCaseDirector = new BookCaseDirector();
     private final ITableDirector tableDirector = new TableDirector();
     private final ICabinetDirector cabinetDirector = new CabinetDirector();
+    private final IOrderDirector orderDirector = new OrderDirector();
 
     @Override
     public Table createTable(Map<String, String> reqData) {
@@ -39,5 +43,10 @@ public class DirectorsFacade implements IDirectorsFacade {
     @Override
     public Cabinet createCabinet(Map<String, String> reqData) {
         return cabinetDirector.createCloset(reqData);
+    }
+
+    @Override
+    public Order createOrder(Map<String, String> reData) {
+        return orderDirector.createOrder(reData);
     }
 }
