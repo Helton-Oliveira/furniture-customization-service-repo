@@ -1,15 +1,13 @@
-package com.digisphere.FurnitureCustomizationService.application.table.useCases;
+package com.digisphere.FurnitureCustomizationService.application.useCase;
 
 import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
 import com.digisphere.FurnitureCustomizationService.application.order.orderFactory.Factory;
-import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
-import com.digisphere.FurnitureCustomizationService.application.table.useCases.interfaces.ICreateTableOrder;
 import com.digisphere.FurnitureCustomizationService.infra.userChecker.IUserExistenceChecker;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class CreateTableOrder implements ICreateTableOrder {
+public class CreateTableOrder implements IUseCase {
     private final IDirectorsFacade directorsFacade;
     private final IUserExistenceChecker userExistenceChecker;
     private final Factory orderFactor;
@@ -21,12 +19,12 @@ public class CreateTableOrder implements ICreateTableOrder {
     }
 
     @Override
-    public Table execute(Map<String, String> data) {
+    public String execute(Map<String, String> data) {
         Boolean EXIST_USER = userExistenceChecker.doesUserExist(UUID.fromString(data.get("creatorsId")));
         if (!EXIST_USER) throw new RuntimeException("ERRO CRIADOR DO PRODUTO INEXISTENTE");
         var table = directorsFacade.createTable(data);
         data.put("productId", table.getId().toString());
 
-        return table;
+        return "PEDIDO CRIADO COM SUCESSO!";
     }
 }
