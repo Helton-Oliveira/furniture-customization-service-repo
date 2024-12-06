@@ -6,17 +6,16 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserExistenceChecker implements IUserExistenceChecker {
+public class UserExistenceChecker {
 
-    @Override
-    public Boolean doesUserExist(UUID id) {
+    public static Boolean doesUserExist(UUID id) {
         String url = generateUrl(id);
         String response = ApiRequester.getData(url);
         if(response.isBlank()) throw new RuntimeException("ERRO AO REQUISITAR USUARIO");
         return true;
     }
 
-    private String generateUrl(UUID id) {
+    private static String generateUrl(UUID id) {
         Matcher matcher = Pattern.compile("[0-9]")
                 .matcher(id.toString());
 
