@@ -1,13 +1,13 @@
-package com.digisphere.FurnitureCustomizationService.application.useCase;
+/*package com.digisphere.FurnitureCustomizationService.application.useCase;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
 
 import java.util.Map;
 
 public class CreateWardrobeOrder implements IUseCase{
-    private final IDirectorsFacade directors;
+    private final IProcessOrder directors;
 
-    public CreateWardrobeOrder(IDirectorsFacade directors) {
+    public CreateWardrobeOrder(IProcessOrder directors) {
         this.directors = directors;
     }
 
@@ -18,4 +18,4 @@ public class CreateWardrobeOrder implements IUseCase{
         if(director == null) throw new RuntimeException("ERRO AO CRIAR ARMARIO");
         return "PEDIDO DE ARMARIO CRIADO COM SUCESSO!";
     }
-}
+}*/

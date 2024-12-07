@@ -2,8 +2,8 @@ package com.digisphere.FurnitureCustomizationService.tableTest;
 
 import com.digisphere.FurnitureCustomizationService.application.command.IInvoker;
 import com.digisphere.FurnitureCustomizationService.application.command.Invoker;
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.DirectorsFacade;
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.ProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -42,8 +42,7 @@ public class CreateTableOrderTest {
     @Test
     @DisplayName("Deve usar o comando para iniciar ")
     void createTableCommand() {
-        IDirectorsFacade directorsFacade = new DirectorsFacade();
-        IInvoker invoker = new Invoker(directorsFacade);
+        IProcessOrder processOrder = new ProcessOrder();
         Map<String, String> data = new HashMap<>();
         data.put("creatorsId", UUID.randomUUID().toString());
         data.put("category", "table");
@@ -58,8 +57,9 @@ public class CreateTableOrderTest {
         data.put("purpose", "outdoor");
         data.put("price", "299.90");
         data.put("quantity", "4");
+        IInvoker invoker = new Invoker(processOrder, data);
 
-        String table = invoker.executeCommand(data);
-        assertThat(table).isEqualTo("PEDIDO CRIADO COM SUCESSO!");
+        String table = invoker.executeCommand(data.get("category"));
+        assertThat(table).isEqualTo("PEDIDO RELIZADO COM SUCESSO!");
     }
 }

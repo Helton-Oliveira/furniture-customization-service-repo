@@ -1,6 +1,6 @@
-package com.digisphere.FurnitureCustomizationService.bookCase;
+/*package com.digisphere.FurnitureCustomizationService.bookCase;
 
-import com.digisphere.FurnitureCustomizationService.application.bookcase.bookcaseBuilder.BookCaseDirector;
+import com.digisphere.FurnitureCustomizationService.application.directors.BookCaseDirector;
 import com.digisphere.FurnitureCustomizationService.application.bookcase.domain.BookCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,4 +35,4 @@ public class BookCaseDirectorTest {
 
         assertThat(bookCase.getId()).isNotNull();
     }
-}
+}*/

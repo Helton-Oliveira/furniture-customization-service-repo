@@ -1,20 +1,20 @@
+/*
 package com.digisphere.FurnitureCustomizationService.application.command;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
-import com.digisphere.FurnitureCustomizationService.application.useCase.CreateChairOrder;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
 import com.digisphere.FurnitureCustomizationService.application.useCase.IUseCase;
 import com.digisphere.FurnitureCustomizationService.application.utils.RequestValidator;
 
 import java.util.List;
 import java.util.Map;
 
-public class ChairCommand implements ICommand{
+public class ChairCommand implements AbstractCommand {
     private IUseCase useCase;
     private Map<String, String> params;
-    private final IDirectorsFacade directorsFacade;
+    private final IProcessOrder directorsFacade;
     private final List<String> FIELDS = List.of("creatorsId", "material", "upholstery", "adjustableHeight", "armrests", "seatRotation", "maximumWeightSupport", "legStyle", "seatAndFrameColor", "purpose");
 
-    public ChairCommand(IDirectorsFacade directorsFacade) {
+    public ChairCommand(IProcessOrder directorsFacade) {
         this.directorsFacade = directorsFacade;
     }
 
@@ -34,3 +34,4 @@ public class ChairCommand implements ICommand{
         return useCase.execute(params);
     }
 }
+*/

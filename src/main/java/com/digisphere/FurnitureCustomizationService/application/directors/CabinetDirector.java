@@ -1,16 +1,17 @@
-package com.digisphere.FurnitureCustomizationService.application.cabinet.cabinetBuilder;
+package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.cabinet.domain.Cabinet;
+import com.digisphere.FurnitureCustomizationService.application.cabinet.cabinetBuilder.CabinetBuilder;
+import com.digisphere.FurnitureCustomizationService.application.cabinet.cabinetBuilder.ICabinetBuilder;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class CabinetDirector implements ICabinetDirector {
+public class CabinetDirector implements IDirector {
 
     private final ICabinetBuilder builder = new CabinetBuilder();
 
     @Override
-    public Cabinet createCloset(Map<String, String> data) {
+    public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
         builder.setCreatorsId(UUID.fromString(data.get("creatorsId")));
         builder.setMaterial(data.get("material"));
@@ -29,6 +30,6 @@ public class CabinetDirector implements ICabinetDirector {
                 "height", data.get("height"),
                 "depth", data.get("depth")
         ));
-        return builder.build();
+        return (T) builder.build();
     }
 }

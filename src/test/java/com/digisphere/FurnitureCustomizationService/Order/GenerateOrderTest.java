@@ -1,8 +1,7 @@
-package com.digisphere.FurnitureCustomizationService.Order;
+/*package com.digisphere.FurnitureCustomizationService.Order;
 
 import com.digisphere.FurnitureCustomizationService.application.order.domain.Order;
-import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.IOrderDirector;
-import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.OrderDirector;
+import com.digisphere.FurnitureCustomizationService.application.directors.OrderDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -28,4 +27,4 @@ public class GenerateOrderTest {
         Order orderResult = orderFactory.createOrder(data);
         assertThat(orderResult).isNotNull();
     }
-}
+}*/

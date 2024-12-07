@@ -1,15 +1,16 @@
-package com.digisphere.FurnitureCustomizationService.application.bookcase.bookcaseBuilder;
+package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.bookcase.domain.BookCase;
+import com.digisphere.FurnitureCustomizationService.application.bookcase.bookcaseBuilder.BookCaseBuilder;
+import com.digisphere.FurnitureCustomizationService.application.bookcase.bookcaseBuilder.IBookCaseBuilder;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class BookCaseDirector implements IBookCaseDirector{
+public class BookCaseDirector implements IDirector {
     private IBookCaseBuilder builder = new BookCaseBuilder();
 
     @Override
-    public BookCase createBookCase(Map<String, String> data) {
+    public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
         builder.setCreatorsId(UUID.fromString(data.get("creatorsId")));
         builder.setMaterial(data.get("material"));
@@ -28,6 +29,6 @@ public class BookCaseDirector implements IBookCaseDirector{
         builder.setWeightSupportedPerShelf(data.get("weightSupportedPerShelf"));
         builder.setStyle(data.get("style"));
 
-        return builder.build();
+        return (T) builder.build();
     }
 }

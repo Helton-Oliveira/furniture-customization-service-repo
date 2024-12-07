@@ -1,28 +1,25 @@
 package com.digisphere.FurnitureCustomizationService.application.command;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Invoker implements IInvoker {
-    private Map<String, ICommand> commands = new HashMap<> ();
-    private final IDirectorsFacade directorsFacade;
+    private final Map<String, AbstractCommand> commands = new HashMap<> ();
 
-    public Invoker(IDirectorsFacade directorsFacade) {
-        this.directorsFacade = directorsFacade;
+    public Invoker(IProcessOrder processOrder, Map<String, String> params) {
+        this.setCommands(processOrder, params);
     }
 
-    private void setCommands() {
-        commands.put("table", new TableCommand(directorsFacade));
-        commands.put("chair", new ChairCommand(directorsFacade));
+    private void setCommands(IProcessOrder processOrder, Map<String, String> params) {
+        commands.put("table", new TableCommand(processOrder, params));
+       /* commands.put("chair", new ChairCommand(processOrder));*/
     }
 
     @Override
-    public String executeCommand(Map<String, String> params) {
-        var command = commands.get(params.get("category").toLowerCase());
-        command.setParams(params);
-        return command.execute();
+    public String executeCommand(String keyCommand) {
+        return commands.get(keyCommand).execute();
     }
 
 }

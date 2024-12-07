@@ -1,15 +1,16 @@
-package com.digisphere.FurnitureCustomizationService.application.table.tableBuilder;
+package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
+import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.ITableBuilder;
+import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.TableBuilder;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class TableDirector implements ITableDirector {
+public class TableDirector implements IDirector {
     private final ITableBuilder builder = new TableBuilder();
 
     @Override
-    public Table createTable(Map<String, String> data) {
+    public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
         builder.setCreatorsCpf(data.get("creatorsCpf"));
         builder.setMaterial(data.get("materials"));
@@ -23,6 +24,6 @@ public class TableDirector implements ITableDirector {
                 "width", data.get("width"),
                 "height", data.get("height")
         ));
-        return builder.build();
+        return (T) builder.build();
     }
 }

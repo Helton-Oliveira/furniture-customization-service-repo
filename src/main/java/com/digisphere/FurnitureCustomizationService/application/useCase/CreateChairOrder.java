@@ -1,15 +1,15 @@
-package com.digisphere.FurnitureCustomizationService.application.useCase;
+/*package com.digisphere.FurnitureCustomizationService.application.useCase;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
+import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
 import com.digisphere.FurnitureCustomizationService.infra.userChecker.UserExistenceChecker;
 
 import java.util.Map;
 import java.util.UUID;
 
 public class CreateChairOrder implements IUseCase {
-    private final IDirectorsFacade directorsFacade;
+    private final IProcessOrder directorsFacade;
 
-    public CreateChairOrder(IDirectorsFacade directorsFacade1) {
+    public CreateChairOrder(IProcessOrder directorsFacade1) {
         this.directorsFacade = directorsFacade1;
     }
 
@@ -22,4 +22,4 @@ public class CreateChairOrder implements IUseCase {
         var oder = directorsFacade.createOrder(reqParams);
         return "PEDIDO CRIADO COM SUCESSO!";
     }
-}
+}*/

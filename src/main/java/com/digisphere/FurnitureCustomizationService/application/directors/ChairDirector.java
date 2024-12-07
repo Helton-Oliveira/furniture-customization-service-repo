@@ -1,15 +1,16 @@
-package com.digisphere.FurnitureCustomizationService.application.chair.chairBuilder;
+package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.chair.domain.Chair;
+import com.digisphere.FurnitureCustomizationService.application.chair.chairBuilder.ChairBuilder;
+import com.digisphere.FurnitureCustomizationService.application.chair.chairBuilder.IChairBuilder;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class ChairDirector implements IChairDirector{
+public class ChairDirector implements IDirector{
     private final IChairBuilder builder = new ChairBuilder();
 
     @Override
-    public Chair createChair(Map<String, String> data) {
+    public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
         builder.setCreatorsId(UUID.fromString(data.get("creatorsId")));
         builder.setMaterial(data.get("material"));
@@ -21,6 +22,6 @@ public class ChairDirector implements IChairDirector{
         builder.setLegStyle(data.get("legStyle"));
         builder.setSeatAndFrameColor(data.get("seatAndFrameColor"));
         builder.setPurpose(data.get("purpose"));
-        return builder.build();
+        return (T) builder.build();
     }
 }

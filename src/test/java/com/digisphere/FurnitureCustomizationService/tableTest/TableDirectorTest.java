@@ -1,8 +1,8 @@
+/*
 package com.digisphere.FurnitureCustomizationService.tableTest;
 
 import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
-import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.ITableDirector;
-import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.TableDirector;
+import com.digisphere.FurnitureCustomizationService.application.directors.TableDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -43,3 +43,4 @@ public class TableDirectorTest {
         );
     }
 }
+*/

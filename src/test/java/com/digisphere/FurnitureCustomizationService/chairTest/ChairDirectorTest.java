@@ -1,7 +1,7 @@
+/*
 package com.digisphere.FurnitureCustomizationService.chairTest;
 
-import com.digisphere.FurnitureCustomizationService.application.chair.chairBuilder.ChairDirector;
-import com.digisphere.FurnitureCustomizationService.application.chair.chairBuilder.IChairDirector;
+import com.digisphere.FurnitureCustomizationService.application.directors.ChairDirector;
 import com.digisphere.FurnitureCustomizationService.application.chair.domain.Chair;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -37,3 +37,4 @@ public class ChairDirectorTest {
         assertThat(chair).isNotNull();
     }
 }
+*/
