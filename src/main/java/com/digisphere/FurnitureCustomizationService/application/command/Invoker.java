@@ -1,22 +1,28 @@
 package com.digisphere.FurnitureCustomizationService.application.command;
 
 import com.digisphere.FurnitureCustomizationService.application.facadePattern.IDirectorsFacade;
-import com.digisphere.FurnitureCustomizationService.application.utils.RequestValidator;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Invoker implements IInvoker {
-    private ICommand command;
+    private Map<String, ICommand> commands = new HashMap<> ();
+    private final IDirectorsFacade directorsFacade;
 
-    @Override
-    public void setParams(Map<String, String> params, IDirectorsFacade directorsFacade) {
-        RequestValidator.validateFurnitureCategory(params);
-        if(params.containsKey("category") && params.get("category").equalsIgnoreCase("table")) this.command = new TableCommand(params, directorsFacade);
-        if(params.containsKey("category") && params.get("category").equalsIgnoreCase("chair")) this.command = new ChairCommand(directorsFacade, params);
+    public Invoker(IDirectorsFacade directorsFacade) {
+        this.directorsFacade = directorsFacade;
+    }
+
+    private void setCommands() {
+        commands.put("table", new TableCommand(directorsFacade));
+        commands.put("chair", new ChairCommand(directorsFacade));
     }
 
     @Override
-    public String executeCommand() {
+    public String executeCommand(Map<String, String> params) {
+        var command = commands.get(params.get("category").toLowerCase());
+        command.setParams(params);
         return command.execute();
     }
+
 }

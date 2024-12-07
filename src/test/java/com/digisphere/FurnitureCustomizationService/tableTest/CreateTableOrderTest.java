@@ -43,7 +43,7 @@ public class CreateTableOrderTest {
     @DisplayName("Deve usar o comando para iniciar ")
     void createTableCommand() {
         IDirectorsFacade directorsFacade = new DirectorsFacade();
-        IInvoker invoker = new Invoker();
+        IInvoker invoker = new Invoker(directorsFacade);
         Map<String, String> data = new HashMap<>();
         data.put("creatorsId", UUID.randomUUID().toString());
         data.put("category", "table");
@@ -59,8 +59,7 @@ public class CreateTableOrderTest {
         data.put("price", "299.90");
         data.put("quantity", "4");
 
-        invoker.setParams(data, directorsFacade);
-        String table = invoker.executeCommand();
+        String table = invoker.executeCommand(data);
         assertThat(table).isEqualTo("PEDIDO CRIADO COM SUCESSO!");
     }
 }

@@ -10,22 +10,27 @@ import java.util.Map;
 
 public class TableCommand implements ICommand{
     private IUseCase useCase;
-    private final Map<String, String> params;
+    private Map<String, String> params;
+    private final IDirectorsFacade directorsFacade;
     private final List<String> FIELDS = List.of("creatorsId", "material", "frameMaterial", "format", "width", "length", "height", "numberOfFeet", "montage", "purpose", "price", "quantity");
 
-    public TableCommand(Map<String, String> params, IDirectorsFacade directorsFacade) {
-        RequestValidator.validateRequestFields(params, FIELDS);
-        this.setUseCase(directorsFacade);
-        this.params = params;
+    public TableCommand(IDirectorsFacade directorsFacade) {
+        this.directorsFacade = directorsFacade;
     }
 
-    private void setUseCase(IDirectorsFacade directorsFacade) {
-        this.useCase = new CreateTableOrder(directorsFacade);
+    @Override
+    public void setParams(Map<String, String> params) {
+        RequestValidator.validateRequestFields(params, FIELDS);
+        this.params = params;
     }
 
     @Override
     public String execute() {
+        setUseCase();
         return useCase.execute(params);
     }
 
+    private void setUseCase() {
+        this.useCase = new CreateTableOrder(directorsFacade);
+    }
 }
