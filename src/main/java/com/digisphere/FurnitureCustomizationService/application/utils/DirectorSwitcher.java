@@ -1,8 +1,6 @@
 package com.digisphere.FurnitureCustomizationService.application.utils;
 
-import com.digisphere.FurnitureCustomizationService.application.directors.ChairDirector;
-import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
-import com.digisphere.FurnitureCustomizationService.application.directors.TableDirector;
+import com.digisphere.FurnitureCustomizationService.application.directors.*;
 
 public class DirectorSwitcher {
 
@@ -11,6 +9,8 @@ public class DirectorSwitcher {
         switch (category.toLowerCase()) {
             case "table" -> director = new TableDirector();
             case "chair" -> director = new ChairDirector();
+            case "cabinet" -> director = new CabinetDirector();
+            case "bookcase" -> director = new BookCaseDirector();
         }
 
         return director;

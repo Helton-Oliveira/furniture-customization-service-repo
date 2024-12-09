@@ -19,8 +19,8 @@ public class ProcessOrder implements IProcessOrder{
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             System.out.println(e.getMessage());
         }
-        var oder = oderDirector.create(reqData);
-        if(oder == null) throw new RuntimeException("ERRO PEDIDO NAO PROCESSAD, TENTE NOVAMENTE MAIS TARDE...");
+        var order = oderDirector.create(reqData);
+        if(order == null) throw new RuntimeException("ERRO PEDIDO NAO PROCESSAD, TENTE NOVAMENTE MAIS TARDE...");
 
         return "PEDIDO RELIZADO COM SUCESSO!";
     }
