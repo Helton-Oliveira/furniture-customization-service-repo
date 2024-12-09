@@ -8,11 +8,10 @@ import java.util.regex.Pattern;
 
 public class UserExistenceChecker {
 
-    public static Boolean doesUserExist(UUID id) {
+    public static void doesUserExist(UUID id) {
         String url = generateUrl(id);
         String response = ApiRequester.getData(url);
         if(response.isBlank()) throw new RuntimeException("ERRO AO REQUISITAR USUARIO");
-        return true;
     }
 
     private static String generateUrl(UUID id) {
