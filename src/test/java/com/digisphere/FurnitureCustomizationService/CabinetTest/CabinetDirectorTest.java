@@ -1,8 +1,8 @@
-/*
 package com.digisphere.FurnitureCustomizationService.CabinetTest;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.CabinetDirector;
 import com.digisphere.FurnitureCustomizationService.application.cabinet.domain.Cabinet;
+import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -34,10 +34,10 @@ public class CabinetDirectorTest {
         data.put("montage", "Manual");
         data.put("purpose", "Storage");
 
-        var cabinetDirector = new CabinetDirector();
-        Cabinet cabinet = cabinetDirector.createCloset(data);
+
+        IDirector cabinetDirector = new CabinetDirector();
+        Cabinet cabinet = cabinetDirector.create(data);
 
         assertThat(cabinet).isNotNull();
     }
 }
-*/

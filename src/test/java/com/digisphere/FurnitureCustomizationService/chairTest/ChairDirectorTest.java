@@ -1,8 +1,8 @@
-/*
 package com.digisphere.FurnitureCustomizationService.chairTest;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.ChairDirector;
 import com.digisphere.FurnitureCustomizationService.application.chair.domain.Chair;
+import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -31,10 +31,9 @@ public class ChairDirectorTest {
         data.put("seatAndFrameColor", "Black");
         data.put("purpose", "Office");
 
-        IChairDirector director = new ChairDirector();
-        Chair chair = director.createChair(data);
+        IDirector director = new ChairDirector();
+        Chair chair = director.create(data);
 
         assertThat(chair).isNotNull();
     }
 }
-*/

@@ -1,6 +1,6 @@
-/*
 package com.digisphere.FurnitureCustomizationService.tableTest;
 
+import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
 import com.digisphere.FurnitureCustomizationService.application.directors.TableDirector;
 import org.junit.jupiter.api.DisplayName;
@@ -29,8 +29,8 @@ public class TableDirectorTest {
         data.put("montage", "detachable");
         data.put("purpose", "outdoor");
 
-        ITableDirector tableDirector = new TableDirector();
-        Table table = tableDirector.createTable(data);
+        IDirector tableDirector = new TableDirector();
+        Table table = tableDirector.create(data);
 
         assertThat(table.getId()).isNotNull();
 
@@ -43,4 +43,3 @@ public class TableDirectorTest {
         );
     }
 }
-*/

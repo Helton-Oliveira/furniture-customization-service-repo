@@ -1,7 +1,8 @@
-/*package com.digisphere.FurnitureCustomizationService.bookCase;
+package com.digisphere.FurnitureCustomizationService.bookCase;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.BookCaseDirector;
 import com.digisphere.FurnitureCustomizationService.application.bookcase.domain.BookCase;
+import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -30,9 +31,9 @@ public class BookCaseDirectorTest {
         data.put("style", "Modern");
 
 
-        var bookCaseDirector = new BookCaseDirector();
-        BookCase bookCase = bookCaseDirector.createBookCase(data);
+        IDirector bookCaseDirector = new BookCaseDirector();
+        BookCase bookCase = bookCaseDirector.create(data);
 
         assertThat(bookCase.getId()).isNotNull();
     }
-}*/
+}
