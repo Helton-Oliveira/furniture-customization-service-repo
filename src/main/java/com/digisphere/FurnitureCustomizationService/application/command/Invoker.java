@@ -1,5 +1,6 @@
 package com.digisphere.FurnitureCustomizationService.application.command;
 
+import com.digisphere.FurnitureCustomizationService.application.command.commands.*;
 import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
 
 import java.util.HashMap;
@@ -14,7 +15,9 @@ public class Invoker implements IInvoker {
 
     private void setCommands(IProcessOrder processOrder, Map<String, String> params) {
         commands.put("table", new TableCommand(processOrder, params));
-       /* commands.put("chair", new ChairCommand(processOrder));*/
+        commands.put("chair", new ChairCommand(processOrder, params));
+        commands.put("cabinet", new CabinetCommand(processOrder, params));
+        commands.put("bookCase", new BookCaseCommand(processOrder, params));
     }
 
     @Override
