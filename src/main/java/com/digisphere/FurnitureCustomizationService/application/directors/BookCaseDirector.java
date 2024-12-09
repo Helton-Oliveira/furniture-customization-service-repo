@@ -1,7 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.bookcase.bookcaseBuilder.BookCaseBuilder;
-import com.digisphere.FurnitureCustomizationService.application.bookcase.bookcaseBuilder.IBookCaseBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.bookcase.bookcaseBuilder.BookCaseBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.bookcase.bookcaseBuilder.IBookCaseBuilder;
 
 import java.util.Map;
 import java.util.UUID;

@@ -1,7 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.tableTest;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
-import com.digisphere.FurnitureCustomizationService.application.table.domain.Table;
+import com.digisphere.FurnitureCustomizationService.application.domain.table.domain.Table;
 import com.digisphere.FurnitureCustomizationService.application.directors.TableDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

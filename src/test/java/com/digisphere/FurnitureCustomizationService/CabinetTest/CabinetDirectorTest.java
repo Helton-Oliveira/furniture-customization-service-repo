@@ -1,7 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.CabinetTest;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.CabinetDirector;
-import com.digisphere.FurnitureCustomizationService.application.cabinet.domain.Cabinet;
+import com.digisphere.FurnitureCustomizationService.application.domain.cabinet.domain.Cabinet;
 import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

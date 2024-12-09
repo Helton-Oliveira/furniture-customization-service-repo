@@ -1,7 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.chairTest;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.ChairDirector;
-import com.digisphere.FurnitureCustomizationService.application.chair.domain.Chair;
+import com.digisphere.FurnitureCustomizationService.application.domain.chair.domain.Chair;
 import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

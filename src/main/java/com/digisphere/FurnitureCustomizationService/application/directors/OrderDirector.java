@@ -1,8 +1,8 @@
 package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.order.domain.component.OrderStatus;
-import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.IOrderBuilder;
-import com.digisphere.FurnitureCustomizationService.application.order.orderBuilder.OrderBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.order.domain.component.OrderStatus;
+import com.digisphere.FurnitureCustomizationService.application.domain.order.orderBuilder.IOrderBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.order.orderBuilder.OrderBuilder;
 
 import java.util.Map;
 import java.util.UUID;

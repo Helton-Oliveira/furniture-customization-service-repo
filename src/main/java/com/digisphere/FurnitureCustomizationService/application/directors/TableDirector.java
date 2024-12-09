@@ -1,7 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.ITableBuilder;
-import com.digisphere.FurnitureCustomizationService.application.table.tableBuilder.TableBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.table.tableBuilder.ITableBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.table.tableBuilder.TableBuilder;
 
 import java.util.Map;
 import java.util.UUID;

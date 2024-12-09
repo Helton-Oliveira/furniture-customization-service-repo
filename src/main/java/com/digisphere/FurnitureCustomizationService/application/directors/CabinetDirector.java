@@ -1,7 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.application.directors;
 
-import com.digisphere.FurnitureCustomizationService.application.cabinet.cabinetBuilder.CabinetBuilder;
-import com.digisphere.FurnitureCustomizationService.application.cabinet.cabinetBuilder.ICabinetBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.cabinet.cabinetBuilder.CabinetBuilder;
+import com.digisphere.FurnitureCustomizationService.application.domain.cabinet.cabinetBuilder.ICabinetBuilder;
 
 import java.util.Map;
 import java.util.UUID;

@@ -1,7 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.bookCase;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.BookCaseDirector;
-import com.digisphere.FurnitureCustomizationService.application.bookcase.domain.BookCase;
+import com.digisphere.FurnitureCustomizationService.application.domain.bookcase.domain.BookCase;
 import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
