@@ -2,8 +2,8 @@ package com.digisphere.FurnitureCustomizationService.tableTest;
 
 import com.digisphere.FurnitureCustomizationService.application.command.IInvoker;
 import com.digisphere.FurnitureCustomizationService.application.command.Invoker;
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.ProcessOrder;
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.useCase.ProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

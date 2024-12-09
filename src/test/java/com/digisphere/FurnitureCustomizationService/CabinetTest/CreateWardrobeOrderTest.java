@@ -1,8 +1,8 @@
 /*
 package com.digisphere.FurnitureCustomizationService.CabinetTest;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.ProcessOrder;
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.useCase.ProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
 import com.digisphere.FurnitureCustomizationService.application.useCase.CreateWardrobeOrder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

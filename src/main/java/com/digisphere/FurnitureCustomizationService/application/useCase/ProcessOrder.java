@@ -1,24 +1,17 @@
-package com.digisphere.FurnitureCustomizationService.application.facadePattern;
+package com.digisphere.FurnitureCustomizationService.application.useCase;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import com.digisphere.FurnitureCustomizationService.application.directors.OrderDirector;
-import com.digisphere.FurnitureCustomizationService.application.directors.TableDirector;
-import com.digisphere.FurnitureCustomizationService.application.utils.RequestValidator;
+import com.digisphere.FurnitureCustomizationService.application.utils.DirectorSwitcher;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 import java.util.Map;
 
 public class ProcessOrder implements IProcessOrder{
-    private IDirector director;
     private final IDirector oderDirector = new OrderDirector();
 
-    public void validateFields(List<String> fields, Map<String, String> reqData) {
-        RequestValidator.validateRequestFields(reqData ,fields);
-    }
-
-    public String process(Map<String, String> reqData) {
-        switchDirector(reqData.get("category"));
+    public String execute(Map<String, String> reqData) {
+        IDirector director = DirectorSwitcher.choice(reqData.get("category"));
         var product = director.create(reqData);
         try {
             reqData.put("productId", String.valueOf(product.getClass().getMethod("getId").invoke(product)));
@@ -32,7 +25,4 @@ public class ProcessOrder implements IProcessOrder{
         return "PEDIDO RELIZADO COM SUCESSO!";
     }
 
-    private void switchDirector(String director) {
-        if (director.equalsIgnoreCase("table")) this.director = new TableDirector();
-    }
 }
