@@ -1,6 +1,6 @@
 package com.digisphere.FurnitureCustomizationService.application.command;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class TableCommand extends AbstractCommand {
     @Override
     String execute() {
         validateRequestFields(FIELDS);
-        return processOrder.process(req);
+        return processOrder.execute(req);
     }
 
 

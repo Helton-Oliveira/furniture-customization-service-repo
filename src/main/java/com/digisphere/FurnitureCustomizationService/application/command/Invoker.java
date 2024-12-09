@@ -1,6 +1,6 @@
 package com.digisphere.FurnitureCustomizationService.application.command;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.application.command;
 
-import com.digisphere.FurnitureCustomizationService.application.facadePattern.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.utils.RequestValidator;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public abstract class AbstractCommand {
     }
 
     protected void validateRequestFields(List<String> fields) {
-        processOrder.validateFields(fields, req);
+        RequestValidator.validateRequestFields(req, fields);
     }
 
     abstract String execute();
