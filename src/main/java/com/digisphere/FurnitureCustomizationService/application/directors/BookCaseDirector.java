@@ -28,6 +28,7 @@ public class BookCaseDirector implements IDirector {
         builder.setExternalFinish(data.get("externalFinish"));
         builder.setWeightSupportedPerShelf(data.get("weightSupportedPerShelf"));
         builder.setStyle(data.get("style"));
+        builder.setPurpose(data.get("purpose"));
 
         return (T) builder.build();
     }

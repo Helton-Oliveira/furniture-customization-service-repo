@@ -14,6 +14,7 @@ public class BookCase {
     private String externalFinish;
     private String weightSupportedPerShelf;
     private String style;
+    private String purpose;
 
     public UUID getId() {
         return id;
@@ -21,6 +22,10 @@ public class BookCase {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
     }
 
     public UUID getCreatorsId() {

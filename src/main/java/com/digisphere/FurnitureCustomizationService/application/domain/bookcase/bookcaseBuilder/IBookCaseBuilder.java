@@ -18,4 +18,5 @@ public interface IBookCaseBuilder {
     void setExternalFinish(String externalFinish);
     void setWeightSupportedPerShelf(String weightSupportedPerShelf);
     void setStyle(String style);
+    void setPurpose(String purpose);
 }

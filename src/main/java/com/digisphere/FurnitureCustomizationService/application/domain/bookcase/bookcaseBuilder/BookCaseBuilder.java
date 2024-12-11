@@ -69,4 +69,9 @@ public class BookCaseBuilder implements IBookCaseBuilder {
     public void setStyle(String style) {
         this.bookCase.setStyle(style);
     }
+
+    @Override
+    public void setPurpose(String purpose) {
+        this.bookCase.setPurpose(purpose);
+    }
 }
