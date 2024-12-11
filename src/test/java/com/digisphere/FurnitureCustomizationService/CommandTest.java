@@ -101,7 +101,7 @@ public class CommandTest {
         data.put("category", "bookCase");
         data.put("quantity", "7");
         data.put("price", "130.0");
-        data.put("material", "Wood");
+        data.put("material", "lightWood");
         data.put("numberOfShelves", "5");
         data.put("heightBetweenShelves", "30cm");
         data.put("mouthingSystem", "Wall-Mounted");

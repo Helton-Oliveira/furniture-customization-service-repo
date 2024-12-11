@@ -1,6 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.application.command.commands;
 
 import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.infra.MaterialsMock;
 import com.digisphere.FurnitureCustomizationService.application.utils.RequestValidator;
 import com.digisphere.FurnitureCustomizationService.infra.userChecker.UserExistenceChecker;
 
@@ -22,6 +23,7 @@ public abstract class AbstractCommand {
     protected void validateRequestFields(List<String> fields) {
         RequestValidator.validateRequestFields(req, fields);
         UserExistenceChecker.doesUserExist(UUID.fromString(req.get("creatorsId")));
+        MaterialsMock.materialsExists(req.get("material"));
     }
 
     public abstract String execute();
