@@ -26,23 +26,18 @@ public class OrderBuilder implements IOrderBuilder {
     }
 
     @Override
-    public void setCreatorsId(UUID creatorsId) {
-        this.order.setCreatorsId(creatorsId);
-    }
-
-    @Override
     public void setProductId(UUID productId) {
         this.order.setProductId(productId);
     }
 
     @Override
-    public void setPrice(Double price) {
-        this.order.setPrice(price);
+    public void setCostumerId(UUID costumerId) {
+        this.order.setCostumerId(costumerId);
     }
 
     @Override
-    public void setCategory(String category) {
-        this.order.setCategory(category);
+    public void setPrice(Double price) {
+        this.order.setPrice(price);
     }
 
     @Override

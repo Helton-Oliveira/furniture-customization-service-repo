@@ -6,10 +6,9 @@ import java.util.UUID;
 
 public class Order {
     private UUID orderId;
-    private UUID creatorsId;
     private UUID productId;
+    private UUID costumerId;
     private Double price;
-    private String category;
     private Integer quantity;
     private OrderStatus orderStatus;
 
@@ -17,20 +16,16 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public void setCreatorsId(UUID creatorsId) {
-        this.creatorsId = creatorsId;
-    }
-
     public void setProductId(UUID productId) {
         this.productId = productId;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setCostumerId(UUID costumerId) {
+        this.costumerId = costumerId;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public void setQuantity(Integer quantity) {
@@ -45,10 +40,8 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", creatorsId=" + creatorsId +
                 ", productId=" + productId +
                 ", price=" + price +
-                ", category='" + category + '\'' +
                 ", quantity=" + quantity +
                 ", orderStatus=" + orderStatus +
                 '}';
