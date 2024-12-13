@@ -9,8 +9,8 @@ public interface IBookCaseBuilder {
     BookCase build();
     void reset();
     void setId(UUID id);
-    void setCreatorsId(UUID creatorsId);
-    void setMaterial(String material);
+    void setCreatorsCpf(String creatorsCpf);
+    void setMaterial(UUID materialId);
     void setNumberOfShelves(String numberOfShelves);
     void setHeightBetweenShelves(String heightBetweenShelves);
     void setMouthingSystem(String mouthingSystem);

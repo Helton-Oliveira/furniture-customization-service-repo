@@ -11,7 +11,7 @@ import java.util.Map;
 public abstract class AbstractCommand {
     protected final IProcessOrder processOrder;
     protected final Map<String, String> req;
-    protected List<String> DEFAULT_FIELDS = new ArrayList<>(List.of("material", "category", "creatorsCpf", "quantity", "price", "purpose"));
+    protected List<String> DEFAULT_FIELDS = new ArrayList<>(List.of("materialId", "category", "creatorsCpf", "quantity", "price", "purpose"));
     private final IRequestHandler REQUEST_HANDLER = new BaseRequestHandler();
 
     public AbstractCommand(IProcessOrder processOrder, Map<String, String> req) {

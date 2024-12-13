@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class Chair {
     private UUID id;
-    private UUID creatorsId;
-    private String material;
+    private String creatorsCpf;
+    private UUID materialId;
     private String upholstery;
     private Boolean adjustableHeight;
     private Boolean armrests;
@@ -23,20 +23,20 @@ public class Chair {
         this.id = id;
     }
 
-    public UUID getCreatorsId() {
-        return creatorsId;
+    public String getCreatorsCpf() {
+        return creatorsCpf;
     }
 
-    public void setCreatorsId(UUID creatorsId) {
-        this.creatorsId = creatorsId;
+    public void setCreatorsCpf(String creatorsCpf) {
+        this.creatorsCpf = creatorsCpf;
     }
 
-    public String getMaterial() {
-        return material;
+    public UUID getMaterial() {
+        return materialId;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public void setMaterial(UUID material) {
+        this.materialId = material;
     }
 
     public String getUpholstery() {

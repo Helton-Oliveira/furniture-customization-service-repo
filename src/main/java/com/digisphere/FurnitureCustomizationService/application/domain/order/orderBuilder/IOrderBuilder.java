@@ -8,7 +8,7 @@ public interface IOrderBuilder {
     void reset();
     void setOrderId(UUID orderId);
     void setProductId(UUID productId);
-    void setCostumerId(String costumerCpf);
+    void setCostumerCpf(String costumerCpf);
     void setPrice(Double price);
     void setQuantity(Integer quantity);
     void setOrderStatus(String orderStatus); // String para ser convertido externamente

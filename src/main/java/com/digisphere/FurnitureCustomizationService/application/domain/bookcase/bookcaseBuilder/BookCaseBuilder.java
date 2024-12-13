@@ -26,13 +26,13 @@ public class BookCaseBuilder implements IBookCaseBuilder {
     }
 
     @Override
-    public void setCreatorsId(UUID creatorsId) {
-        this.bookCase.setCreatorsId(creatorsId);
+    public void setCreatorsCpf(String creatorsCpf) {
+        this.bookCase.setCreatorsCpf(creatorsCpf);
     }
 
     @Override
-    public void setMaterial(String material) {
-        this.bookCase.setMaterial(material);
+    public void setMaterial(UUID material) {
+        this.bookCase.setMaterialId(material);
     }
 
     @Override

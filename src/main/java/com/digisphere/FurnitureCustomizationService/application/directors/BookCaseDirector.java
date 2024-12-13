@@ -12,8 +12,8 @@ public class BookCaseDirector implements IDirector {
     @Override
     public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
-        builder.setCreatorsId(UUID.fromString(data.get("creatorsId")));
-        builder.setMaterial(data.get("material"));
+        builder.setCreatorsCpf(data.get("creatorsCpf"));
+        builder.setMaterial(UUID.fromString(data.get("materialId")));
         builder.setNumberOfShelves(data.get("numberOfShelves"));
         builder.setHeightBetweenShelves(data.get("heightBetweenShelves"));
         builder.setMouthingSystem(data.get("mouthingSystem"));

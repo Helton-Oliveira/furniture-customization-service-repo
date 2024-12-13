@@ -12,8 +12,8 @@ public class ChairDirector implements IDirector{
     @Override
     public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
-        builder.setCreatorsId(UUID.fromString(data.get("creatorsId")));
-        builder.setMaterial(data.get("material"));
+        builder.setCreatorsCpf(data.get("creatorsCpf"));
+        builder.setMaterial(UUID.fromString(data.get("materialId")));
         builder.setUpholstery(data.get("upholstery"));
         builder.setAdjustableHeight(Boolean.parseBoolean(data.get("adjustableHeight")));
         builder.setArmrests(Boolean.parseBoolean(data.get("armrests")));

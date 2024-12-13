@@ -28,13 +28,13 @@ public class CabinetBuilder implements ICabinetBuilder {
     }
 
     @Override
-    public void setCreatorsId(UUID creatorsId) {
-        this.cabinet.setCreatorsId(creatorsId);
+    public void setCreatorsCpf(String creatorsCpf) {
+        this.cabinet.setCreatorsCpf(creatorsCpf);
     }
 
     @Override
-    public void setMaterial(String material) {
-        this.cabinet.setMaterial(material);
+    public void setMaterial(UUID materialId) {
+        this.cabinet.setMaterialId(materialId);
     }
 
     @Override

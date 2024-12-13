@@ -9,8 +9,8 @@ public interface ICabinetBuilder {
     Cabinet build();
     void reset();
     void setId(UUID id);
-    void setCreatorsId(UUID creatorsId);
-    void setMaterial(String material);
+    void setCreatorsCpf(String creatorsCpf);
+    void setMaterial(UUID materialId);
     void setNumberOfDoors(String numberOfDoors);
     void setDoorType(String doorType);
     void setNumberOfDrawers(String numberOfDrawers);

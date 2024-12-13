@@ -14,7 +14,7 @@ public class OrderDirector implements IDirector {
     public <T> T create(Map<String, String> data) {
         order.setOrderId(UUID.randomUUID());
         order.setProductId(UUID.fromString(data.get("productId")));
-        order.setCostumerId(data.get("creatorsCpf"));
+        order.setCostumerCpf(data.get("creatorsCpf"));
         order.setPrice(Double.valueOf(data.get("price")));
         order.setQuantity(Integer.parseInt(data.get("quantity")));
         order.setOrderStatus(String.valueOf(OrderStatus.PENDING));

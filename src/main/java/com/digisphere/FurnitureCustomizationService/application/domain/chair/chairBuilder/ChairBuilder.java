@@ -25,13 +25,13 @@ public class ChairBuilder implements IChairBuilder {
     }
 
     @Override
-    public void setCreatorsId(UUID creatorsId) {
-        this.chair.setCreatorsId(creatorsId);
+    public void setCreatorsCpf(String creatorsCpf) {
+        this.chair.setCreatorsCpf(creatorsCpf);
     }
 
     @Override
-    public void setMaterial(String material) {
-        this.chair.setMaterial(material);
+    public void setMaterial(UUID materialId) {
+        this.chair.setMaterial(materialId);
     }
 
     @Override

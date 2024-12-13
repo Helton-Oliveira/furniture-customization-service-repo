@@ -5,8 +5,8 @@ import java.util.UUID;
 
 public class BookCase {
     private UUID id;
-    private UUID creatorsId;
-    private String material;
+    private String creatorsCpf;
+    private UUID materialId;
     private String numberOfShelves;
     private String heightBetweenShelves;
     private String mouthingSystem;
@@ -28,20 +28,20 @@ public class BookCase {
         this.purpose = purpose;
     }
 
-    public UUID getCreatorsId() {
-        return creatorsId;
+    public String getCreatorsCpf() {
+        return creatorsCpf;
     }
 
-    public void setCreatorsId(UUID creatorsId) {
-        this.creatorsId = creatorsId;
+    public void setCreatorsCpf(String creatorsCpf) {
+        this.creatorsCpf = creatorsCpf;
     }
 
-    public String getMaterial() {
-        return material;
+    public UUID getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public void setMaterialId(UUID materialId) {
+        this.materialId = materialId;
     }
 
     public String getNumberOfShelves() {

@@ -13,7 +13,7 @@ public class TableDirector implements IDirector {
     public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
         builder.setCreatorsCpf(data.get("creatorsCpf"));
-        builder.setMaterialId(UUID.fromString(data.get("material")));
+        builder.setMaterialId(UUID.fromString(data.get("materialId")));
         builder.setFrameMaterial(data.get("frameMaterial"));
         builder.setFormat(data.get("format"));
         builder.setNumberOfFeet(data.get("numberOfFeet"));

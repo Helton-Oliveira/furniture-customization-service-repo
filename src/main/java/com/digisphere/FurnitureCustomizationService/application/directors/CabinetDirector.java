@@ -13,8 +13,8 @@ public class CabinetDirector implements IDirector {
     @Override
     public <T> T create(Map<String, String> data) {
         builder.setId(UUID.randomUUID());
-        builder.setCreatorsId(UUID.fromString(data.get("creatorsId")));
-        builder.setMaterial(data.get("material"));
+        builder.setCreatorsCpf(data.get("creatorsCpf"));
+        builder.setMaterial(UUID.fromString(data.get("materialId")));
         builder.setNumberOfDoors(data.get("numberOfDoors"));
         builder.setDoorType(data.get("doorType"));
         builder.setNumberOfDrawers(data.get("numberOfDrawers"));

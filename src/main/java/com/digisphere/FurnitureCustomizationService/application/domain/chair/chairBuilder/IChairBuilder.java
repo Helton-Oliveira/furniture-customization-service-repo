@@ -8,8 +8,8 @@ public interface IChairBuilder {
     Chair build();
     void reset();
     void setId(UUID id);
-    void setCreatorsId(UUID creatorsId);
-    void setMaterial(String material);
+    void setCreatorsCpf(String creatorsCpf);
+    void setMaterial(UUID materialId);
     void setUpholstery(String upholstery);
     void setAdjustableHeight(Boolean adjustableHeight);
     void setArmrests(Boolean armrests);
