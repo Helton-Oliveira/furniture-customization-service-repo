@@ -6,13 +6,11 @@ import com.digisphere.FurnitureCustomizationService.application.useCase.ProcessO
 import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
 import com.digisphere.FurnitureCustomizationService.infra.DAO.context.ContextDAO;
 import com.digisphere.FurnitureCustomizationService.infra.DAO.context.IContextDAO;
-import com.digisphere.FurnitureCustomizationService.infra.DAO.states.IDAO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,7 +24,7 @@ public class CommandTest {
         Map<String, String> data = new HashMap<>();
         data.put("creatorsCpf", "93732782077");
         data.put("category", "table");
-        data.put("material", "40f83189-0a88-48e1-9e7b-730794aac0c5");
+        data.put("materialId", "40f83189-0a88-48e1-9e7b-730794aac0c5");
         data.put("frameMaterial", "metal");
         data.put("format", "rectangular");
         data.put("width", "100");

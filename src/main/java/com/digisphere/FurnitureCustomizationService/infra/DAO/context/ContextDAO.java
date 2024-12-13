@@ -2,11 +2,11 @@ package com.digisphere.FurnitureCustomizationService.infra.DAO.context;
 
 import com.digisphere.FurnitureCustomizationService.adapter.connection.IConnection;
 import com.digisphere.FurnitureCustomizationService.adapter.connection.PostgreSqlAdapter;
-import com.digisphere.FurnitureCustomizationService.infra.DAO.states.IDAO;
+import com.digisphere.FurnitureCustomizationService.infra.DAO.states.AbstractDAO;
 import com.digisphere.FurnitureCustomizationService.infra.DAO.states.TableDAO;
 
 public class ContextDAO implements IContextDAO{
-    private IDAO currentState;
+    private AbstractDAO currentState;
     private final IConnection connection = new PostgreSqlAdapter();
 
     @Override
