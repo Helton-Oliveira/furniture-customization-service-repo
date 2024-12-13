@@ -28,5 +28,5 @@ public abstract class AbstractDAO {
     }
 
     protected abstract PreparedStatement createSql();
-   protected abstract void buildInsertion(Object product, PreparedStatement st) throws SQLException;
+   protected abstract void buildInsertion(Object obj, PreparedStatement st) throws SQLException;
 }
