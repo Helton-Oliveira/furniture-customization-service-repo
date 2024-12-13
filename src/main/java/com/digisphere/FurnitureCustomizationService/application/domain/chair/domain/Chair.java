@@ -31,7 +31,7 @@ public class Chair {
         this.creatorsCpf = creatorsCpf;
     }
 
-    public UUID getMaterial() {
+    public UUID getMaterialId() {
         return materialId;
     }
 
