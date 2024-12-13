@@ -2,7 +2,9 @@ package com.digisphere.FurnitureCustomizationService.application.useCase;
 
 import com.digisphere.FurnitureCustomizationService.application.directors.IDirector;
 import com.digisphere.FurnitureCustomizationService.application.directors.OrderDirector;
+import com.digisphere.FurnitureCustomizationService.application.domain.order.domain.Order;
 import com.digisphere.FurnitureCustomizationService.application.utils.DirectorSwitcher;
+import com.digisphere.FurnitureCustomizationService.application.visitor.IVisitor;
 import com.digisphere.FurnitureCustomizationService.infra.DAO.context.IContextDAO;
 
 import java.lang.reflect.InvocationTargetException;
@@ -11,9 +13,11 @@ import java.util.Map;
 public class ProcessOrder implements IProcessOrder{
     private final IDirector oderDirector = new OrderDirector();
     private final IContextDAO contextDAO;
+    private final IVisitor visitor;
 
-    public ProcessOrder(IContextDAO contextDAO) {
+    public ProcessOrder(IContextDAO contextDAO, IVisitor visitor) {
         this.contextDAO = contextDAO;
+        this.visitor = visitor;
     }
 
     public String execute(Map<String, String> reqData) {
@@ -26,8 +30,9 @@ public class ProcessOrder implements IProcessOrder{
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             System.out.println(e.getMessage());
         }
-        var order = oderDirector.create(reqData);
+        Order order = oderDirector.create(reqData);
         if(order == null) throw new RuntimeException("ERRO PEDIDO NAO PROCESSAD, TENTE NOVAMENTE MAIS TARDE...");
+        visitor.visit(order);
 
         return "PEDIDO RELIZADO COM SUCESSO!";
     }

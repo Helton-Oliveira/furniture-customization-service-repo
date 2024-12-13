@@ -4,6 +4,8 @@ import com.digisphere.FurnitureCustomizationService.application.command.IInvoker
 import com.digisphere.FurnitureCustomizationService.application.command.Invoker;
 import com.digisphere.FurnitureCustomizationService.application.useCase.ProcessOrder;
 import com.digisphere.FurnitureCustomizationService.application.useCase.IProcessOrder;
+import com.digisphere.FurnitureCustomizationService.application.visitor.IVisitor;
+import com.digisphere.FurnitureCustomizationService.application.visitor.OderVisitor;
 import com.digisphere.FurnitureCustomizationService.infra.DAO.context.ContextDAO;
 import com.digisphere.FurnitureCustomizationService.infra.DAO.context.IContextDAO;
 import org.junit.jupiter.api.DisplayName;
@@ -20,7 +22,8 @@ public class CommandTest {
     @DisplayName("Deve usar o comando para processar pedido de mesa")
     void createTableCommand() {
         IContextDAO contextDAO = new ContextDAO();
-        IProcessOrder processOrder = new ProcessOrder(contextDAO);
+        IVisitor visitor = new OderVisitor();
+        IProcessOrder processOrder = new ProcessOrder(contextDAO, visitor);
         Map<String, String> data = new HashMap<>();
         data.put("creatorsCpf", "93732782077");
         data.put("category", "table");
@@ -45,7 +48,8 @@ public class CommandTest {
     @DisplayName("Deve usar o comando para processar pedido de cadeira")
     void createChairCommand() {
         IContextDAO contextDAO = new ContextDAO();
-        IProcessOrder processOrder = new ProcessOrder(contextDAO);
+        IVisitor visitor = new OderVisitor();
+        IProcessOrder processOrder = new ProcessOrder(contextDAO, visitor);
         Map<String, String> data = new HashMap<>();
         data.put("creatorsCpf", "93732782077");
         data.put("category", "chair");
@@ -70,7 +74,8 @@ public class CommandTest {
     @DisplayName("Deve usar o comando para processar pedido de armario")
     void createCabinetCommand() {
         IContextDAO contextDAO = new ContextDAO();
-        IProcessOrder processOrder = new ProcessOrder(contextDAO);
+        IVisitor visitor = new OderVisitor();
+        IProcessOrder processOrder = new ProcessOrder(contextDAO, visitor);
         Map<String, String> data = new HashMap<>();
         data.put("creatorsCpf", "93732782077");
         data.put("category", "cabinet");
@@ -100,7 +105,8 @@ public class CommandTest {
     @DisplayName("Deve usar o comando para processar pedido de estante")
     void createBookCaseCommand() {
         IContextDAO contextDAO = new ContextDAO();
-        IProcessOrder processOrder = new ProcessOrder(contextDAO);
+        IVisitor visitor = new OderVisitor();
+        IProcessOrder processOrder = new ProcessOrder(contextDAO, visitor);
         Map<String, String> data = new HashMap<>();
         data.put("creatorsCpf", "93732782077");
         data.put("category", "bookCase");
