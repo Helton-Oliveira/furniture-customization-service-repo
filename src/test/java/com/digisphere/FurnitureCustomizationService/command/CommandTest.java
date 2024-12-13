@@ -1,4 +1,4 @@
-package com.digisphere.FurnitureCustomizationService;
+package com.digisphere.FurnitureCustomizationService.command;
 
 import com.digisphere.FurnitureCustomizationService.application.command.IInvoker;
 import com.digisphere.FurnitureCustomizationService.application.command.Invoker;
