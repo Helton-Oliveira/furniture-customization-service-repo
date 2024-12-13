@@ -16,6 +16,10 @@ public class BookCase {
     private String style;
     private String purpose;
 
+    public String getPurpose() {
+        return purpose;
+    }
+
     public UUID getId() {
         return id;
     }
