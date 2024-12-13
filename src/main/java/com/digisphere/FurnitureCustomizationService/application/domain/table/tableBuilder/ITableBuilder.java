@@ -10,7 +10,7 @@ public interface ITableBuilder {
     void reset();
     void setId(UUID id);
     void setCreatorsCpf(String creatorsCpf);
-    void setMaterial(String material);
+    void setMaterialId(UUID materialId);
     void setFrameMaterial(String frameMaterial);
     void setFormat(String format);
     void setDimensions(Map<String, String> dimensions);

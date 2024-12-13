@@ -6,7 +6,7 @@ import java.util.UUID;
 public class Table {
     private UUID id;
     private String creatorsCpf;
-    private String material;
+    private UUID materialId;
     private String frameMaterial;
     private String format;
     private Map<String, String> dimensions;
@@ -30,12 +30,12 @@ public class Table {
         this.creatorsCpf = creatorsCpf;
     }
 
-    public String getMaterial() {
-        return material;
+    public UUID getMaterialId() {
+        return materialId;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public void setMaterialId(UUID materialId) {
+        this.materialId = materialId;
     }
 
     public String getFrameMaterial() {

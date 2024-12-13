@@ -31,8 +31,8 @@ public class TableBuilder implements ITableBuilder {
     }
 
     @Override
-    public void setMaterial(String material) {
-        this.table.setMaterial(material);
+    public void setMaterialId(UUID materialId) {
+        this.table.setMaterialId(materialId);
     }
 
     @Override

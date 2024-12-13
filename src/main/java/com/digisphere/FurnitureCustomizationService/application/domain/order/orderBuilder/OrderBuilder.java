@@ -31,8 +31,8 @@ public class OrderBuilder implements IOrderBuilder {
     }
 
     @Override
-    public void setCostumerId(UUID costumerId) {
-        this.order.setCostumerId(costumerId);
+    public void setCostumerId(String costumerId) {
+        this.order.setCostumerCpf(costumerId);
     }
 
     @Override

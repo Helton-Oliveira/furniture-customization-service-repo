@@ -7,7 +7,7 @@ import java.util.UUID;
 public class Order {
     private UUID orderId;
     private UUID productId;
-    private UUID costumerId;
+    private String costumerCpf;
     private Double price;
     private Integer quantity;
     private OrderStatus orderStatus;
@@ -20,8 +20,8 @@ public class Order {
         this.productId = productId;
     }
 
-    public void setCostumerId(UUID costumerId) {
-        this.costumerId = costumerId;
+    public void setCostumerCpf(String costumerCpf) {
+        this.costumerCpf = costumerCpf;
     }
 
     public void setPrice(Double price) {
