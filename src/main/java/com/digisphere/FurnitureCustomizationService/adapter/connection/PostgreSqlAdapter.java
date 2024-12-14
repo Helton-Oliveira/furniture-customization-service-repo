@@ -1,5 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.adapter.connection;
 
+import com.digisphere.FurnitureCustomizationService.infra.errorHandler.CustomError;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -16,7 +18,8 @@ public class PostgreSqlAdapter implements IConnection {
         try {
             return connect().prepareStatement(sql);
         } catch (SQLException e) {
-           throw new RuntimeException(e.getMessage());
+            System.out.println(e.getMessage());
+           throw new CustomError("ERRO DE CONEXÃO");
         }
     }
 
@@ -26,6 +29,7 @@ public class PostgreSqlAdapter implements IConnection {
             connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            throw new CustomError("ERRO DE CONEXÃO");
         }
     }
 
@@ -34,7 +38,8 @@ public class PostgreSqlAdapter implements IConnection {
             Properties properties = new Properties();
             InputStream input = getClass().getClassLoader().getResourceAsStream("env.properties");
             if ((input == null)) {
-                throw new RuntimeException("ARQUIVO NÃO ENCONTRADO");
+                System.out.println("ERRO COM AS CREDENCIAIS DO BANCO");
+                throw new CustomError("ERRO INESPERADO, TENTE NOVAMENTE MAIS TARDE...");
             }
             properties.load(input);
             String DB_URL = properties.getProperty("DB_URL");

@@ -1,5 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.infra.chainOfResponsability;
 
+import com.digisphere.FurnitureCustomizationService.infra.errorHandler.CustomError;
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +17,6 @@ public class MaterialValidationHandler extends BaseRequestHandler {
 
     @Override
     public void valid(Map<String, String> fields, List<String> keys) {
-        if(!MATERIALS.containsValue(fields.get("material"))) throw new RuntimeException("ERRO! MATERIAL INEXISTENTE");
+        if(!MATERIALS.containsValue(fields.get("material"))) throw new CustomError("ERRO! MATERIAL INEXISTENTE");
     }
 }

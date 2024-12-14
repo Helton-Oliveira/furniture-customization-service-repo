@@ -6,6 +6,7 @@ import com.digisphere.FurnitureCustomizationService.application.domain.order.dom
 import com.digisphere.FurnitureCustomizationService.application.utils.DirectorSwitcher;
 import com.digisphere.FurnitureCustomizationService.application.visitor.IVisitor;
 import com.digisphere.FurnitureCustomizationService.infra.DAO.context.IContextDAO;
+import com.digisphere.FurnitureCustomizationService.infra.errorHandler.CustomError;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class ProcessOrder implements IProcessOrder{
             System.out.println(e.getMessage());
         }
         Order order = oderDirector.create(reqData);
-        if(order == null) throw new RuntimeException("ERRO PEDIDO NAO PROCESSAD, TENTE NOVAMENTE MAIS TARDE...");
+        if(order == null) throw new CustomError("ERRO PEDIDO NAO PROCESSAD, TENTE NOVAMENTE MAIS TARDE...");
         order.accept(visitor);
 
         return "PEDIDO RELIZADO COM SUCESSO!";

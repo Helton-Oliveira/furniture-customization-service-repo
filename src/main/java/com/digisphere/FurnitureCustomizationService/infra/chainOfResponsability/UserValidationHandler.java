@@ -1,6 +1,7 @@
 package com.digisphere.FurnitureCustomizationService.infra.chainOfResponsability;
 
 import com.digisphere.FurnitureCustomizationService.infra.apiRequester.ApiRequester;
+import com.digisphere.FurnitureCustomizationService.infra.errorHandler.CustomError;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ public class UserValidationHandler extends BaseRequestHandler {
     public void valid(Map<String, String> fields, List<String> keys) {
         String url = generateUrl(UUID.fromString(fields.get("creatorsId")));
         String response = ApiRequester.getData(url);
-        if(response.isBlank()) throw new RuntimeException("ERRO AO REQUISITAR USUARIO");
+        if(response.isBlank()) throw new CustomError("ERRO AO REQUISITAR USUARIO");
 
         this.next(new MaterialValidationHandler());
     }
@@ -23,7 +24,7 @@ public class UserValidationHandler extends BaseRequestHandler {
         Matcher matcher = Pattern.compile("[0-9]")
                 .matcher(id.toString());
 
-        if(!matcher.find()) throw new RuntimeException("N/A");
+        if(!matcher.find()) throw new CustomError("N/A");
 
         String userId = matcher.group();
         return "https://jsonplaceholder.typicode.com/users/"+userId;
