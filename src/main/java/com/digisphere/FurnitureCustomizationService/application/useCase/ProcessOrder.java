@@ -32,7 +32,7 @@ public class ProcessOrder implements IProcessOrder{
         }
         Order order = oderDirector.create(reqData);
         if(order == null) throw new RuntimeException("ERRO PEDIDO NAO PROCESSAD, TENTE NOVAMENTE MAIS TARDE...");
-        visitor.visit(order);
+        order.accept(visitor);
 
         return "PEDIDO RELIZADO COM SUCESSO!";
     }
